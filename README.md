@@ -10,7 +10,7 @@ Key Components of Catan:
   
   4 teams
   
-  19 tiles 
+  19 Hexes
     4 Sheep fields
     4 Woodlands
     4 Croplands
@@ -18,7 +18,7 @@ Key Components of Catan:
     3 Clay pits
     1 desert
     
-  Numbers for Tiles
+  Numbers for Hexes
     2
     3 x2
     4 x2
@@ -59,6 +59,15 @@ Key Components of Catan:
     2 clay = 1 any
     2 wood = 1 any
     3 same = 1 any
+    2 wheat = 1 any
+    2 rocks = 1 any
+    3 same = 1 any
+    
+  Turn Order:
+    1. Roll the dice and Resolve events (collect resources or move robber)
+    2. Trade resources or use ports owned
+    3. Use Dev Cards
+    4. Purchase and Build
     
   
   
