@@ -10,6 +10,18 @@ player_resources = None
 
 ### Functions ###
 
+
+'''TODO: build a map seed that generates in a spiral
+->  1 1 1
+   1 1 1 1
+^ 1 1 1 1 1 v
+   1 1 1 1 
+    1 1 1 
+     <  
+
+figure out seeding the map with a random generation in a spiral
+'''
+
 def gen_map():
   # lay tiles
   # number the tiles
