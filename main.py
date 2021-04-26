@@ -1,10 +1,11 @@
 import random as rand
+#import tkinter as tk
 
 ### Setup ###
 
 num_players = None
-players_cards = None
-
+players_devcards = None
+player_resources = None
 
 ### Functions ###
 
@@ -20,6 +21,9 @@ def Dice():
   roll = d1 + d2
   return roll
 
+def get_Resources():
+  pass
+
 def trade():
   # original 4:1
   # port specific 3:1 or special 2:1
@@ -30,8 +34,5 @@ def build():
   # purchase something
   # place or upgrade
   pass
-
-
-
 
 ### Initialize ###

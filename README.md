@@ -77,6 +77,9 @@ Key Components of Catan:
     5. Development cards must be held 1 turn before played
     6. All building placements and purchases are final
     7. 10 Victory Points (VP) to win the game!
+    8. Original placement goes through everyone twice, once forward, then once backward
+    9. ALL PLAYERS START WITH THE RESOURCES FROM THEIR SECOND HOUSE PLACEMENT
+    
   
   
   
