@@ -1,4 +1,5 @@
 import random as rand
+import Randomizer
 #import tkinter as tk
 
 ### Setup ###
@@ -15,11 +16,7 @@ def gen_map():
   # port locations
   pass
 
-def Dice():
-  d1 = rand.randint(1,6)
-  d2 = rand.randint(1,6)
-  roll = d1 + d2
-  return roll
+# randomizer controls DiceRoll()!
 
 def get_Resources():
   pass
