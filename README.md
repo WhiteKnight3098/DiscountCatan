@@ -6,7 +6,7 @@ Key Components of Catan:
 
   2 dice
 
-  Robber   (triggered with the roll of a 7)
+  Robber   (Starts on the Desert hex)
   
   4 teams
   
@@ -31,18 +31,18 @@ Key Components of Catan:
     12
     
   Player pieces
-    4 Cities
-    5 Settlement
+    4 Cities  (worth 2 VP)
+    5 Settlement  (worth 1 VP)
     15 Roads
     
   Development Cards (Dev Cards)
     14 Knights
-    5 Victories ( Chapel, University, Market, Palace, Library )
+    5 Victories ( Chapel, University, Market, Palace, Library ) (+1 VP)
     2 Monopoly (All resources getter)
     2 Year of plenty (Take any 2 resources from the bank
     2 Road building (Place 2 new roads
     
-  Bonus Points
+  Bonus Points (+2)
     Longest Road (minimum 5 road segments)
     Largest Army
     
@@ -69,6 +69,14 @@ Key Components of Catan:
     3. Use Dev Cards
     4. Purchase and Build
     
+  Key runtime things:
+    1. Settlements must be built at least 2 road spaces away from another settlment/city
+    2. Settlements are built and later may be upgraded to a city
+    3. Robber gets moved on the roll of a 7 or the use of a knight. This triggers the robbing of a player on that hex. Anyone with 7+ cards discards half (on the roll only)
+    4. Robbers block resources from generating on the hex in which in resides
+    5. Development cards must be held 1 turn before played
+    6. All building placements and purchases are final
+    7. 10 Victory Points (VP) to win the game!
   
   
   
