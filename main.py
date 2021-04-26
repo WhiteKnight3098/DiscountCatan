@@ -25,7 +25,7 @@ figure out seeding the map with a random generation in a spiral
 def gen_map():
   # lay tiles
   # number the tiles
-  # port locations
+  # port locations should be fixed, not random
   pass
 
 # randomizer controls DiceRoll()!
