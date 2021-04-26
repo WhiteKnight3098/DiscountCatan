@@ -18,7 +18,10 @@ def gen_map():
 
 # randomizer controls DiceRoll()!
 
-def get_Resources():
+def get_Resources(roll):
+  # find tiles with matching number
+  # check for settlements and cities adjacent to tile
+  # give resources: 1 per settlement, 2 per city
   pass
 
 def trade():
@@ -33,3 +36,7 @@ def build():
   pass
 
 ### Initialize ###
+
+roll = Randomizer.DiceRoll()
+
+print(roll)
