@@ -1,5 +1,6 @@
 import random as rand
-import Randomizer
+import Randomizer   # Custon Dice Module
+import Dev_Cards    # Custom Deck of Cards and controls
 #import tkinter as tk
 
 ### Setup ###
