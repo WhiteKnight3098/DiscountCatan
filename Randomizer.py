@@ -12,7 +12,7 @@ def TokenLogger():
   randomized_tokens = []
   values_list = [2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12]
   for i in values_list:
-    current = 19 - i
+    current = int(len(values_list)) - i
     number = rand.randint(0,current)
     randomized_tokens.append(number)
   return randomized_tokens
@@ -21,7 +21,7 @@ def TileLogger():
   randomized_tiles = []
   tiles = ["Sheep","Sheep","Sheep","Sheep","Wood","Wood","Wood","Wood","Crop","Crop","Crop","Crop","Rock","Rock","Rock","Clay","Clay","Clay"]
   for i in tiles:
-    current = 19 - i
+    current = int(len(tiles)) - i
     tile = rand.randint(0, current)
     randomized_tiles.appened(tile)
   return randomized_tiles
