@@ -17,4 +17,11 @@ def TokenLogger():
     randomized_tokens.append(number)
   return randomized_tokens
 
-def Tilelogger()
+def TileLogger():
+  randomized_tiles = []
+  tiles = ["Sheep","Sheep","Sheep","Sheep","Wood","Wood","Wood","Wood","Crop","Crop","Crop","Crop","Rock","Rock","Rock","Clay","Clay","Clay"]
+  for i in tiles:
+    current = 19 - i
+    tile = rand.randint(0, current)
+    randomized_tiles.appened(tile)
+  return randomized_tiles
