@@ -15,3 +15,5 @@ def TokenLogger():
     number = rand.randint(0,current)
     randomized_tokens.append(number)
   return randomized_tokens
+
+def Tilelogger()
