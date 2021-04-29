@@ -42,22 +42,3 @@ class Deck():
   def showDeck(self):
     for card in range(Deck):
       Card.showCard()
-
-
-class Player(Deck):
-  def __init__(self, name):
-    self.name = name
-    self.player_hand = []
-
-  # Play Methods
-  def PurchaseCard(self, Sheep, Wheat, Stone):
-    if Sheep and Wheat and Stone:
-      self.player_hand.append(Deck.drawCard())
-
-  def PlayCard(self):
-    pass
-
-  # Debug Methods
-  def ShowHand(self):
-    for card in self.player_hand:
-      Card.showCard()

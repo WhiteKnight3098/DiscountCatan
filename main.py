@@ -1,6 +1,7 @@
 import random as rand
 import Randomizer   # Custon Dice Module
 import Dev_Cards    # Custom Deck of Cards and controls
+import Player
 #import tkinter as tk
 
 ### Setup ###
@@ -50,6 +51,14 @@ def build():
 
 ### Initialize ###
 
-roll = Randomizer.DiceRoll()
+# How many players?
+# Gen map
+# Randomly choose a player to place first
+# Players place initial settlements and roads
+# Regular turn order begins
+## Roll and Recieve Resources
+## Trade and purchase
+## Build
 
-print(roll)
+# Have something counting everyone's scores
+# 
