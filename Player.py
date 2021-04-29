@@ -1,11 +1,20 @@
 class Player():
   def __init__(self, name):
     self.name = name
-    self.player_hand = []
-    self.resources = []
+    self.player_hand = []  #dev cards
+    self.resources = []  #Resource only
 
   # Resource Collection and Trades
-  def addResource():
+  def addResource(self, diceroll, random_values, tiles):
+
+    indexValues = []
+
+    for number in range(len(random_values)):
+      if diceroll == random_values[number]:
+        indexValues.append(number)
+    
+    self.resources.append(tiles[number])
+      
     pass
 
   def spendResource():
