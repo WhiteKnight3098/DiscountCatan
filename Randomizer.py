@@ -23,5 +23,5 @@ def TileLogger():
   for i in tiles:
     current = int(len(tiles)) - i
     tile = rand.randint(0, current)
-    randomized_tiles.appened(tile)
+    randomized_tiles.append(tile)
   return randomized_tiles
