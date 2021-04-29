@@ -14,3 +14,4 @@ def TokenLogger():
     current = 19 - i
     number = rand.randint(0,current)
     randomized_tokens.append(number)
+  return randomized_tokens
