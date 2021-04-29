@@ -18,10 +18,6 @@ def TokenLogger():
   return randomized_tokens
 
 def TileLogger():
-  randomized_tiles = []
   tiles = ["Sheep","Sheep","Sheep","Sheep","Wood","Wood","Wood","Wood","Crop","Crop","Crop","Crop","Rock","Rock","Rock","Clay","Clay","Clay"]
-  for i in tiles:
-    current = int(len(tiles)) - i
-    tile = rand.randint(0, current)
-    randomized_tiles.append(tile)
-  return randomized_tiles
+  rand.shuffle(tiles)
+  return tiles
