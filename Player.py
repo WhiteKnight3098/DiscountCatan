@@ -16,7 +16,9 @@ class Player():
     self.resources.append(tiles[number])
       
     pass
-
+  def returnstone(self):
+    value = self.resources[0]
+    return value
   def spendResource():
     pass
 
