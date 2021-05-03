@@ -30,8 +30,32 @@ class Player():
         self.sheep.append(index)
       elif self.resources[index] == "Wood":
         self.wood.append(index)
+    print("Stone = {}, Clay = {}, Wheat = {}, Sheep = {}, Wood = {}".format(len(self.stone),len(self.clay),len(self.wheat),len(self.sheep),len(self.wood)))
 
-  def spendResource():
+  def spendResource(self, purchase):
+    if purchase == "road":
+      if len(self.wood) >= 1 and len(self.clay) >= 1:
+        layRoad()
+      else:
+        print("Sorry! Not enough resources")
+
+    elif purchase == "settlement":
+      if len(self.wood) >= 1 and len(self.clay) >= 1 and len(self.sheep) >= 1 and len(self.wheat) >= 1:
+        buildSettlement()
+      else:
+        print("Sorry! Not enough resources")
+
+    elif purchase == "city":
+      if len(self.wheat) >= 2 and len(self.stone) >= 3:
+        upgradeCity()
+      else:
+        print("Sorry! Not enough resources")
+
+    elif purchase == "card":
+      if len(self.wheat) >= 1 and len(self.sheep) >= 1 and len(self.stone) >= 1:
+        purchaseCard()
+      else:
+        print("Sorry! Not enough resources")
     pass
 
   def loseResource():
@@ -41,18 +65,17 @@ class Player():
     pass
 
   # Purchases and Builds
-  def layRoad(self, clay, wood):
+  def layRoad(self):
     pass
 
-  def buildSettlement(self, clay, wood, wheat, sheep):
+  def buildSettlement(self):
     pass
 
-  def upgradeCity(self, wheat, stone): #2 wheat, 3 stone
+  def upgradeCity(self): #2 wheat, 3 stone
     pass
 
-  def PurchaseCard(self, Sheep, Wheat, Stone):
-    if Sheep and Wheat and Stone:
-      self.player_hand.append(Deck.drawCard())
+  def purchaseCard(self):
+    pass
 
   # Development Card Methods
   def PlayCard(self):
