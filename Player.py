@@ -48,3 +48,9 @@ class Player():
   def ShowHand(self):
     for card in self.player_hand:
       Card.showCard()
+
+  def ShowResources(self):
+    holding = []
+    for resource in self.resources:
+      holding.append(resource)
+    print(holding)
