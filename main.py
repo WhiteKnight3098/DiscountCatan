@@ -1,5 +1,4 @@
 import random as rand
-from time import sleep
 from tkinter import *
 import matplotlib.pyplot as plt
 import numpy as np
@@ -7,30 +6,34 @@ import numpy as np
 
 ###SETUP###
 root = Tk()
-root.geometry('400x400')
-
+root.geometry('800x800')
+leaderboard = Text(root, width = 35, height = 15, wrap='none')
+leaderboard.pack()
 
 
 #player
 Coffee_Made = 0
 Level = 0
-Money = 100
+Money = 100.00
 sales_price = 1.00
 
 Baristas = 0 #improves user clicks
-Employee_Cost = 10
+Employee_Cost = 10.00
 Shops = 0 #controls autoclick production
-Expansion_Cost = 200
+Expansion_Cost = 200.00
 
 Beans = 50
 Bean_prices = []
+Bean_Current = 0
 Beans_rate = 200
 
 ###FUNCTIONS###
 
 def update_leaderboard():
   bean_price_relay()
-  print('''
+  leaderboard.delete("1.0", "end")
+  leaderboard.insert("end", 
+  '''
   Current Status!
   Coffee Made: {}
   Money: {}
@@ -41,7 +44,7 @@ def update_leaderboard():
   Employee_Cost: {}
   Shops: {}
   Expansion Cost: {}
-  '''.format(Coffee_Made,Money,sales_price,Beans,Bean_prices,Baristas, Employee_Cost, Shops, Expansion_Cost,)) 
+  '''.format(Coffee_Made,Money,sales_price,Beans,Bean_Current,Baristas, Employee_Cost, Shops, Expansion_Cost))
 
 def makeCoffee():
   global Coffee_Made
@@ -89,11 +92,17 @@ def buyBeans():
     print("Lacking sufficient funds to purchase beans.")
   update_leaderboard()
 
+
 def bean_price_relay():
+  global Bean_Current
+  list_length =  len(Bean_prices)
+  if list_length > 14:
+    Bean_prices.pop(0)
   price = rand.randint(20,50)
   Bean_prices.append(price)
-"""   current = len(Bean_prices) - 1
-  print("Bean price: ${}".format(Bean_prices[current])) """
+  index = len(Bean_prices) - 1
+  Bean_Current = Bean_prices[index]
+
 
 def hire_barista():
   global Money
@@ -108,7 +117,7 @@ def hire_barista():
     print("Lacking sufficient funds to hire staff.")
   update_leaderboard()
 
-#TODO: Make Sale price function for raising and lowering coffee cost
+#TODO: Make Sale price button for raising and lowering coffee cost
 def sales_price_up():
   global sales_price
   sales_price += 0.05
