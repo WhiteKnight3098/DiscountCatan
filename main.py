@@ -1,7 +1,7 @@
 import random as rand
 from tkinter import *
-from typing import Collection
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 """ import numpy as np """
 
 
@@ -90,7 +90,7 @@ def buyBeans():
   if Money >= cost:
     Money = Money - cost
     Beans += Beans_rate
-    newsfeed.insert('1.0', 'Beans acquired')
+    newsfeed.insert('1.0', 'Beans acquired\n')
   else:
     print("Lacking sufficient funds to purchase beans.")
   update_leaderboard()
@@ -151,18 +151,18 @@ def shop_generator():
 
 
 #TODO: make matplotlib chart of current and past bean prices.
-def bean_plot():
+def bean_plot(i):
   xtime = []
-  if len(Bean_prices) < 15:
+
+  if len(Bean_prices) < 16:
     for x in range(len(Bean_prices)):
       xtime.append(x)
-  print(xtime,Bean_prices)
-  plt.plot(xtime, Bean_prices)
   plt.xlabel("Time")
   plt.ylabel("Price of Beans")
   plt.title("Bean Stock Prices")
-  plt.show()
-  root.after(5000,bean_plot)
+  chart.clear()
+  chart.plot(xtime, Bean_prices)
+
 
 
 # NO BUTTON NEEDED
@@ -180,10 +180,18 @@ def bean_price_relay():
 
 
 
-#TODO: Eventually I think the while loop needs to become a TKinter mainloop. Thus allowing the .after() method for the autoclicker functions.
-#       for testing, this is just jerry-rigged thing to get us working.
-
+#Generate first price
 bean_price_relay()
-bean_plot()
+
+#Begin Graph of stocks
+fig = plt.figure()
+chart = fig.add_subplot(111)
+bean_graph = animation.FuncAnimation(fig, bean_plot, interval=1000)
+plt.tight_layout()
+plt.show()
+
+#Start timed automation
 shop_generator()
+
+#Window Keep-alive
 root.mainloop()
