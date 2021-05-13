@@ -3,7 +3,8 @@ from tkinter import *
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
-
+#Credits:
+#Tristan Stapert did a vast majority of the backend stuff, while Ben Gress focused on GUI and printing to the news feed.
 
 ###SETUP###
 root = Tk()
