@@ -49,6 +49,12 @@ def update_leaderboard():
   Expansion Cost: {}
   '''.format(Coffee_Made,Money,sales_price,Beans,Bean_Current,Baristas,Employee_Cost,Shops,Expansion_Cost))
 
+def insufficientFunds():
+  newsfeed.insert("1.0", "Lack of sufficient funds!\n")
+
+def noBeans():
+  newsfeed.insert("1.0", "No more beans!\n")
+
 def makeCoffee():
   global Coffee_Made
   global Beans
@@ -60,20 +66,20 @@ def makeCoffee():
       Beans -= 1
       Money += sales_price
     else:
-      print("Out of beans!")
+      noBeans()
     for b in range(Baristas):
       if Beans >= 1:
         Coffee_Made += 1
         Beans -= 1
         Money += sales_price
       else:
-        ("You ran out of beans!")
+        noBeans()
   elif Beans >= 1:
     Coffee_Made += 1
     Beans -= 1
     Money += sales_price
   else:
-    print("No beans available for use.")
+    noBeans()
   update_leaderboard()
 
 #Put this here because bad organization. Worse than my cable management lmao    
@@ -92,7 +98,7 @@ def buyBeans():
     Beans += Beans_rate
     newsfeed.insert('1.0', 'Beans acquired\n')
   else:
-    print("Lacking sufficient funds to purchase beans.")
+    insufficientFunds()
   update_leaderboard()
 
 Beansbtn = Button(root, text = "Buy Beans", bd = 2, command= buyBeans)
@@ -109,9 +115,9 @@ def hire_barista():
     Money -= Employee_Cost
     Baristas += 1
     Employee_Cost +=(Employee_Cost/2)
-    newsfeed.insert('1.0', 'Barista Hired')
+    newsfeed.insert('1.0', 'Barista Hired\n')
   else:
-    print("Lacking sufficient funds to hire staff.")
+    insufficientFunds()
   update_leaderboard()
 BaristaButton = Button(root, text = "Hire Barista", bd = 2, command = hire_barista)
 BaristaButton.grid(column=2, row=3)
@@ -128,9 +134,9 @@ def purchase_shop():
     Money -= Expansion_Cost
     Shops += 1
     Expansion_Cost += (Expansion_Cost/2)
-    newsfeed.insert('1.0', 'Shop expanded')
+    newsfeed.insert('1.0', 'Shop expanded. Autogeneration begun\n')
   else:
-    print("Lacking sufficient funds to expand business")
+    insufficientFunds()
   update_leaderboard()
 
 ShopButton = Button(root, text = "Expand Shop", bd = 2, command= purchase_shop)
@@ -146,7 +152,7 @@ def shop_generator():
     if Beans >= 1:
       makeCoffee()
     else:
-      print("No more beans!")
+      noBeans()
   root.after(1000, shop_generator)
 
 
@@ -180,6 +186,10 @@ def bean_price_relay():
 
 
 
+
+#Start timed automation
+shop_generator()
+
 #Generate first price
 bean_price_relay()
 
@@ -189,9 +199,6 @@ chart = fig.add_subplot(111)
 bean_graph = animation.FuncAnimation(fig, bean_plot, interval=1000)
 plt.tight_layout()
 plt.show()
-
-#Start timed automation
-shop_generator()
 
 #Window Keep-alive
 root.mainloop()
